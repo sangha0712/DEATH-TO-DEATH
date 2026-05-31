@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ShieldAlert, Crosshair, BrainCircuit, Skull, Map, Shield } from 'lucide-react';
+import { ShieldAlert, Crosshair, BrainCircuit, Skull, Map, Shield, Zap } from 'lucide-react';
 
 const WorldviewSection = () => {
   return (
@@ -41,10 +41,25 @@ const WorldviewSection = () => {
 
           <section>
             <h3 className="text-2xl font-serif text-shaman-primary-glow border-b border-shaman-surface pb-2 mb-4 flex items-center">
+              <Shield className="w-6 h-6 mr-3" /> 주술고전
+            </h3>
+            <p className="text-shaman-text-muted font-sans font-light leading-relaxed mb-4">
+              전 세계의 주요 국가에 하나씩 존재하는 기관. 국가 차원에서 비밀리에 운영하며, 고전 내 주술사들을 교육하고 이능력을 통제하는 역할을 맡고 있다.
+            </p>
+            <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-primary">
+              <strong className="text-shaman-text-light block mb-1">숨겨진 진실</strong>
+              <p className="text-sm font-sans font-light text-shaman-text-muted">
+                자유롭게 주술사를 양성하기 위해, 고전에 입학한 학생들의 부모님은 모두 국가 기관에 의해 극비리에 암살당했다.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h3 className="text-2xl font-serif text-shaman-primary-glow border-b border-shaman-surface pb-2 mb-4 flex items-center">
               <Map className="w-6 h-6 mr-3" /> 환사유계 (幻死幽界)
             </h3>
             <p className="text-shaman-text-muted font-sans font-light leading-relaxed">
-              한반도 정중앙에 대형 결계를 치고 그 속에서 주술사와 주령들은 목숨을 건 사투를 벌인다. 이 배틀로얄에서 승리 시 절대적인 소원을 획득한다는 소문이 주술사들 사이에서 파다하게 돌고 있으나, 그 실체는 세상에서 주술을 완전히 지워버리려는 절대신들의 어두운 계획이다.
+              한반도 정중앙에 대형 결계를 치고 그 속에서 주술사와 주령들은 목숨을 건 사투를 벌인다. 이 배틀로얄에서 승리 시 절대적인 소원을 획득한다는 소문이 주술사들 사이에서 파다하게 돌고 있으나, 그 소원권은 거짓이며 실체는 세상에서 주술을 완전히 지워버리려는 절대신들의 어두운 계획이다.
             </p>
           </section>
         </div>
@@ -52,11 +67,22 @@ const WorldviewSection = () => {
         <div className="space-y-10">
           <section>
             <h3 className="text-2xl font-serif text-shaman-accent border-b border-shaman-surface pb-2 mb-4 flex items-center">
-              <Crosshair className="w-6 h-6 mr-3" /> 주술사 (呪術師)
+              <Crosshair className="w-6 h-6 mr-3" /> 주력과 주술사
             </h3>
-            <p className="text-shaman-text-muted font-sans font-light leading-relaxed mb-4">
-              주력을 사용해 주령을 제령하는 이능력자. 남성 주술사는 각성 시 저주를 감당하지 못하고 사망하는 경우가 잦아 극히 그 수가 적다.
-            </p>
+            <div className="text-shaman-text-muted font-sans font-light leading-relaxed mb-4 space-y-4">
+              <div>
+                <strong className="text-shaman-text-light block mb-1">주력 (呪力)과 잔예 (残穢)</strong>
+                <p>주술의 근원적인 동력원. 인간의 부정적인 감정에서 발생하며, 무의식적으로 발산하여 흘려보내는 일반인과 달리 이를 체내에 머금어 이능력으로 사용하는 자들을 주술사라 부른다. 주력을 사용한 흔적은 대상이나 공간에 '잔예'의 형태로 남는다.</p>
+              </div>
+              <div>
+                <strong className="text-shaman-text-light block mb-1">주술사 (呪術師)와 주구 (呪具)</strong>
+                <p>주력을 다루어 주령을 제령하는 통제자들. 본래부터 저주가 깃들어있는 무기인 '주구'를 사용하여 육탄전을 벌이기도 한다. 남자 술사는 주력을 각성할 때 그 저주를 감당하지 못하고 사망하는 경우가 잦아 극히 그 수가 적다.</p>
+              </div>
+              <div>
+                <strong className="text-shaman-text-light block mb-1">장막 (帳)</strong>
+                <p>비술사(일반인)의 시각으로부터 내부를 감추고, 밖으로 피해가 새어나가지 않도록 하늘에서부터 내리는 검은 돔 형태의 결계술이다.</p>
+              </div>
+            </div>
             <ul className="text-sm space-y-2 text-shaman-text-muted/80 bg-shaman-surface/50 p-4 rounded border border-shaman-surface">
               <li><strong className="text-shaman-text-light">특급:</strong> 국가 전복 규모의 규격 외 존재</li>
               <li><strong className="text-shaman-text-light">1급:</strong> 주술계의 든든한 기둥</li>
@@ -67,38 +93,60 @@ const WorldviewSection = () => {
 
           <section>
             <h3 className="text-2xl font-serif text-shaman-accent border-b border-shaman-surface pb-2 mb-4 flex items-center">
-              <BrainCircuit className="w-6 h-6 mr-3" /> 술식 (術式)
+              <BrainCircuit className="w-6 h-6 mr-3" /> 술식 메커니즘
             </h3>
-            <p className="text-shaman-text-muted font-sans font-light leading-relaxed mb-4">
-              태어나면서 뇌에 각인되는 고유의 능력. 체내의 '주력'을 자원으로 사용한다. 
-              술식이 인위적으로 소멸되면 사용자는 즉사한다. 타인에게 양도가 가능하지만, 두 개 이상의 술식을 품게 되면 충돌로 인해 모든 술식이 소멸된다.
-            </p>
-            <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-primary">
-              <strong className="text-shaman-primary-glow block mb-1">반전술식 (反轉術式)</strong>
-              <p className="text-sm font-sans font-light text-shaman-text-muted">
-                고도로 발달된 마이너스(-) 주력을 충돌시켜 플러스(+) 에너지를 만드는 기술. 신체 회복에 쓰이며, 순수 마이너스 덩어리인 주령을 향해 직접 방출하면 치명적인 피해를 주어 제령할 수 있다.
+            <div className="mb-4">
+              <strong className="text-shaman-text-light block mb-1">술식 (術式)</strong>
+              <p className="text-shaman-text-muted font-sans font-light leading-relaxed">
+                출생 시 뇌에 각인되는 고유의 능력으로, 체내의 '주력'을 자원으로 사용한다. 술식이 완전히 소멸되면 사용자는 사망한다. 타인 양도는 가능하나 2개 이상 소지 시 술식이 둘 다 소멸된다.
               </p>
             </div>
-            <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-primary mt-4">
-              <strong className="text-shaman-primary-glow block mb-1">공명 (共鳴)</strong>
-              <p className="text-sm font-sans font-light text-shaman-text-muted">
-                죽음을 앞두는 등 극한의 흥분 상태에서 주력의 본질에 대해 깨달으며, 술식들의 출력과 신체능력이 극적으로 성장하는 현상. 이 상태에 이르면 대상의 뇌가 강하게 울리는 묘사가 수반된다.
-              </p>
+            
+            <div className="space-y-4">
+              <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-accent">
+                <strong className="text-shaman-text-light block mb-1">속박 (束縛)</strong>
+                <p className="text-sm font-sans font-light text-shaman-text-muted">
+                  스스로에게 주술적인 패널티나 제약을 부여함으로써 발생하는 메리트를 취하는 주술의 등가교환 법칙.
+                </p>
+              </div>
+              <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-accent">
+                <strong className="text-shaman-text-light block mb-1">천여주박 (天与呪縛)</strong>
+                <p className="text-sm font-sans font-light text-shaman-text-muted">
+                  태어날 때부터 육체에 강제적으로 부여된 선천적 속박. 주력을 전혀 다룰 수 없게 되는 대신 상식을 초월한 압도적인 신체 능력을 얻는 등 극단적인 교환이 성립된다.
+                </p>
+              </div>
+              <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-accent">
+                <strong className="text-shaman-text-light block mb-1">반전술식 (反轉術式)</strong>
+                <p className="text-sm font-sans font-light text-shaman-text-muted">
+                  고도로 발달된 주력 조작으로 신체를 회복하는 기술. 단단한 긍정 에너지를 주령에게 직접 주입하면 확실하게 제령할 수 있다.
+                </p>
+              </div>
             </div>
           </section>
 
           <section>
             <h3 className="text-2xl font-serif text-shaman-accent border-b border-shaman-surface pb-2 mb-4 flex items-center">
-              <Shield className="w-6 h-6 mr-3" /> 주술고전
+              <Zap className="w-6 h-6 mr-3" /> 주술전의 극치
             </h3>
-            <p className="text-shaman-text-muted font-sans font-light leading-relaxed mb-4">
-              전 세계의 주요 국가에 하나씩 존재하는 기관. 국가 차원에서 비밀리에 운영하며, 주술사들의 술식을 등록하고 이능력을 통제, 훈련시키는 역할을 맡고 있다.
-            </p>
-            <div className="bg-black/20 p-4 border-l-2 border-shaman-accent">
-              <strong className="text-shaman-text-light block mb-1">숨겨진 진실</strong>
-              <p className="text-sm font-sans font-light text-shaman-text-muted">
-                주술사를 국가의 통제하에 자유롭게 양성하기 위해, 고전에 입학한 학생들의 부모님은 모두 국가 기관에 의해 극비리에 암살당했다.
-              </p>
+            <div className="space-y-4">
+              <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
+                <strong className="text-shaman-text-light block mb-1">영역전개 (領域展開)</strong>
+                <p className="text-sm font-sans font-light text-shaman-text-muted">
+                  결계를 펼쳐 자신의 술식이 필중하도록 하는 주술전의 정점이자 필살기. 사용 직후에는 술식이 타버려 몇 분간 술식을 사용할 수 없게 되는 리스크가 따른다.
+                </p>
+              </div>
+              <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
+                <strong className="text-shaman-text-light block mb-1">극번 (極ノ番)</strong>
+                <p className="text-sm font-sans font-light text-shaman-text-muted">
+                  각 술식의 극치에 달한 기술. 영역전개에 버금가는 위력을 지닌 준 필살기이다.
+                </p>
+              </div>
+              <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
+                <strong className="text-shaman-text-light block mb-1">흑섬 (黑閃)</strong>
+                <p className="text-sm font-sans font-light text-shaman-text-muted">
+                  타격과의 오차가 0.000001초 이내에 주력이 충돌했을 때 발생하는 공간의 왜곡. 이때 발생하는 타격의 위력은 평소의 2.5승으로 증가하며 검은 빛의 에너지가 번쩍인다. 흑섬을 경험한 술사는 일시적으로 주력의 핵심을 깨닫게 되는 극한의 몰입(Zone) 상태에 돌입한다.
+                </p>
+              </div>
             </div>
           </section>
         </div>

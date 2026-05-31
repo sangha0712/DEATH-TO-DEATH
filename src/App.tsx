@@ -36,6 +36,16 @@ export default function App() {
     return () => clearInterval(interval);
   }, [view, isEntering]);
 
+  React.useEffect(() => {
+    // Preload character images immediately to ensure zero latency when entering the Character tab
+    const ids = Array.from({ length: 30 }, (_, i) => i);
+    ids.forEach((id) => {
+      const img = new Image();
+      img.referrerPolicy = "no-referrer";
+      img.src = `https://igx.kr/r/L2/${id}/0`;
+    });
+  }, []);
+
   const handleJoin = () => {
     setIsEntering(true);
     setTimeout(() => {

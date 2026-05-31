@@ -18,10 +18,16 @@ const WebtoonSection = () => {
         </h2>
       </div>
 
-      <div className="w-full flex items-center justify-center p-12 border border-shaman-surface/50 bg-shaman-surface/20 rounded-md h-[400px]">
-        <p className="text-shaman-text-muted font-sans font-light">
-          (웹툰 이미지가 삽입될 예정입니다)
-        </p>
+      <div className="w-full flex flex-col items-center">
+        {[0, 1, 2, 3, 4].map((index) => (
+          <img 
+            key={index} 
+            src={`https://igx.kr/p/L2/32/${index}`} 
+            alt={`웹툰 ${index + 1}화 (부분)`}
+            className="w-full max-w-full block" 
+            referrerPolicy="no-referrer"
+          />
+        ))}
       </div>
     </motion.div>
   );
