@@ -36,6 +36,17 @@ export const CharacterModal = ({ selectedChar, onClose }: { selectedChar: any, o
 
   useEffect(() => {
     setCurrentImgId(0);
+    
+    // Just-In-Time (JIT) Image Preloading
+    // Character emotion images are preloaded ONLY when the character modal is opened
+    // This prevents 450+ images from bottlenecking the initial site load.
+    if (selectedChar) {
+      for (let emo = 1; emo <= 15; emo++) {
+        const img = new Image();
+        img.referrerPolicy = "no-referrer";
+        img.src = `https://igx.kr/r/L2/${selectedChar.id}/${emo}`;
+      }
+    }
   }, [selectedChar]);
 
   if (!selectedChar) return null;

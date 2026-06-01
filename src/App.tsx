@@ -51,12 +51,8 @@ export default function App() {
         urlsToPreload.push(`https://igx.kr/r/L2/${id}/0`);
     }
 
-    // Character emotion images
-    for (let id = 0; id <= 29; id++) {
-        for (let emo = 1; emo <= 15; emo++) {
-            urlsToPreload.push(`https://igx.kr/r/L2/${id}/${emo}`);
-        }
-    }
+    // Emotes preloading removed from initial load to significantly speed up startup time.
+    // They will be loaded Just-In-Time (JIT) when a user clicks on a specific character.
 
     let index = 0;
     const preloadNext = () => {
