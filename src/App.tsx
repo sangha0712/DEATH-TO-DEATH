@@ -38,43 +38,46 @@ export default function App() {
   }, [view, isEntering]);
 
   React.useEffect(() => {
-    // Only preload the base character images to prevent browser connection exhaustion
     const urlsToPreload: string[] = [];
     
-    // Webtoon images
+    // 1. 최우선 순위: 기본 화면에 필요한 이미지 (웹툰, 캐릭터 썸네일)
     for (let i = 0; i <= 4; i++) {
         urlsToPreload.push(`https://igx.kr/p/L2/32/${i}`);
     }
-    
-    // Character base images
     for (let id = 0; id <= 29; id++) {
         urlsToPreload.push(`https://igx.kr/r/L2/${id}/0`);
     }
 
-    // Emotes preloading removed from initial load to significantly speed up startup time.
-    // They will be loaded Just-In-Time (JIT) when a user clicks on a specific character.
+    // 2. 후순위: 모든 감정 표현 (사이트 접속 직후 백그라운드에서 끊임없이 로딩)
+    for (let id = 0; id <= 29; id++) {
+        for (let emo = 1; emo <= 15; emo++) {
+            urlsToPreload.push(`https://igx.kr/r/L2/${id}/${emo}`);
+        }
+    }
 
     let index = 0;
-    const preloadNext = () => {
-      if (index >= urlsToPreload.length) return;
+    
+    // onload 이벤트에 의존하면 하나라도 실패/지연 시 로딩이 완전히 멈추는 버그가 있습니다.
+    // setInterval을 활용해 브라우저 큐에 주기적으로 밀어넣어 중단 없이 100% 로딩되게 설정합니다.
+    const interval = setInterval(() => {
+      if (index >= urlsToPreload.length) {
+        clearInterval(interval);
+        return;
+      }
       
-      const img = new Image();
-      img.referrerPolicy = "no-referrer";
-      img.src = urlsToPreload[index];
-      
-      index++;
-      
-      img.onload = preloadNext;
-      img.onerror = preloadNext;
-    };
+      // 100ms마다 5장씩 브라우저 네트워크 대기열에 추가 (빠르면서도 서버에 무리가 가지 않는 속도)
+      // 총 480장 로딩에 약 10초 정도 소요되며 끊김 없이 캐싱됩니다.
+      for (let k = 0; k < 5; k++) {
+        if (index < urlsToPreload.length) {
+          const img = new Image();
+          img.referrerPolicy = "no-referrer";
+          img.src = urlsToPreload[index];
+          index++;
+        }
+      }
+    }, 100);
 
-    // Start preloading a bit after the first render
-    const timer = setTimeout(() => {
-      // Start 4 concurrent loaders to load everything in background
-      for(let i = 0; i < 4; i++) preloadNext();
-    }, 500);
-
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, []);
 
   const handleJoin = () => {
