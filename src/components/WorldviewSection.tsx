@@ -323,12 +323,6 @@ const WorldviewSection = () => {
                       </p>
                     </div>
                     <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
-                      <strong className="text-shaman-text-light block mb-1">오의 (奧義)</strong>
-                      <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        술식의 극치에 달한 기술. 영역전개에 버금가는 위력을 지닌 준 필살기이다.
-                      </p>
-                    </div>
-                    <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
                       <strong className="text-shaman-text-light block mb-1">공진 (共振)</strong>
                       <p className="text-sm font-sans font-light text-shaman-text-muted">
                         전투 중 각각의 주력이 동일한 출력으로 충돌 시 공간의 왜곡이 발생한다. 공진을 경험한 각 술사는 잠시 주력의 핵심을 깨닫게 되는 극한의 몰입(Zone) 상태에 돌입한다.
