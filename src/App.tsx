@@ -5,7 +5,7 @@ import CharactersSection from './components/CharactersSection';
 import WorldviewSection from './components/WorldviewSection';
 import FactionsSection from './components/FactionsSection';
 import { AnimatePresence, motion } from 'motion/react';
-import { BookOpen, Users, Globe, Shield } from 'lucide-react';
+import { BookOpen, Users, Globe, Shield, ChevronLeft } from 'lucide-react';
 
 type View = 'intro' | 'hub' | 'section';
 type Tab = 'webtoon' | 'characters' | 'factions' | 'worldview';
@@ -153,7 +153,7 @@ export default function App() {
             transition={{ duration: 0.8 }}
             className="w-full max-w-5xl"
           >
-            <h2 className="text-4xl font-serif text-center text-shaman-text-light mb-16 tracking-widest">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-serif text-center text-shaman-text-light mb-10 md:mb-16 tracking-widest">
               다음 영역을 선택하십시오
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
@@ -185,14 +185,24 @@ export default function App() {
       {view === 'section' && (
         <div className="flex flex-col flex-1">
           <nav className="fixed top-0 left-0 right-0 z-50 border-b border-shaman-surface bg-shaman-bg/80 backdrop-blur-md">
-            <div className="max-w-5xl mx-auto px-4 py-3 md:px-6 md:py-4 flex flex-col md:flex-row items-center justify-between">
-              <button 
-                onClick={() => setView('hub')}
-                className="text-xl md:text-2xl font-serif font-bold tracking-widest text-shaman-primary-glow mb-3 md:mb-0 hover:text-shaman-text-light transition-colors"
-                title="홈으로 돌아가기"
-              >
-                환사유계
-              </button>
+            <div className="max-w-5xl mx-auto px-4 py-3 md:px-6 md:py-4 flex flex-col md:flex-row items-center justify-between relative">
+              <div className="flex w-full md:w-auto items-center justify-between md:justify-start mb-3 md:mb-0">
+                <button
+                  onClick={() => setView('hub')}
+                  className="flex items-center text-shaman-text-muted hover:text-shaman-primary-glow transition-colors md:mr-6 group shrink-0"
+                  title="뒤로가기"
+                >
+                  <ChevronLeft className="w-6 h-6 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
+                  <span className="hidden md:inline font-sans text-sm tracking-widest ml-1">뒤로가기</span>
+                </button>
+                
+                <h1 className="text-xl md:text-2xl font-serif font-bold tracking-widest text-shaman-primary-glow select-none md:pointer-events-none text-center flex-1 md:flex-none">
+                  환사유계
+                </h1>
+                
+                {/* Spacer for mobile to center the logo */}
+                <div className="w-6 shrink-0 md:hidden"></div>
+              </div>
               <div className="flex w-full md:w-auto justify-around md:justify-end space-x-2 sm:space-x-4 md:space-x-8">
                 <NavItem 
                   active={activeTab === 'webtoon'} 
