@@ -15,7 +15,7 @@ const factionsConfig = [
 
 export const rawCharacters = [
   { id: 0, name: "레이", faction: "gods", grade: "3급", gender: "女", age: "124", technique: "도혼술식 (잔혼을 불러 적의 혼·움직임을 끌어당김)", domain: "명천송혼 (저승의 강이 영역 내 혼을 강제 인도·속박)", tags: ["차분", "몽환", "상냥한듯섬뜩", "영혼인도자", "물빛저승계"] },
-  { id: 1, name: "레이사", faction: "hwansa", grade: "1급", gender: "女", age: "16", technique: "희령식신술 (마스코트 주령식신 소환·지휘)", domain: "희령유원 (식신이 무한증식해 포위·돌격·자폭)", tags: ["활발", "장난", "광기", "소라토와 남매"] },
+  { id: 1, name: "레이사", faction: "hwansa", grade: "1급", gender: "女", age: "16", technique: "희령식신술 (마스코트 원령식신 소환·지휘)", domain: "희령유원 (식신이 무한증식해 포위·돌격·자폭)", tags: ["활발", "장난", "광기", "소라토와 남매"] },
   { id: 2, name: "렌", faction: "hwansa", grade: "2급", gender: "男", age: "17", technique: "주정술식 (주력을 푸른 결정·파편·칼날로 실체화)", domain: "창정쇄계 (주력이 결정 파편으로 실체화되어 전방위 절단·폭격)", tags: ["냉정", "무심", "정밀", "주술사 해부·분석에 흥미"] },
   { id: 3, name: "리아", faction: "grave", grade: "특급", gender: "女", age: "22", technique: "환감술식 (시선 내 좌표로 자유롭게 이동)", domain: "미등환가 (좌표를 붕괴시켜 자신만이 이동)", tags: ["나른", "능글", "기만적"] },
   { id: 4, name: "리안", faction: "grave", grade: "1급", gender: "男", age: "17", technique: "영잠술식 (그림자 속을 잠행해 사각에서 급습)", domain: "암영복궁 (모든 사각에서 그림자 급습 발생)", tags: ["냉정", "과묵", "은밀", "정부에게 밉보여 고전 퇴학"] },
@@ -36,7 +36,7 @@ export const rawCharacters = [
   { id: 19, name: "카논", faction: "jujutsu", grade: "1급", gender: "女", age: "17", technique: "주포술식 (압축 주력포 발사)", domain: "포화굉역 (압축 주력포가 전방위 연속포격)", tags: ["장난", "여유", "화력광"] },
   { id: 20, name: "코하루", faction: "hwansa", grade: "3급", gender: "男", age: "16", technique: "도약술식 (순간 도약과 공중 기동으로 궤도란)", domain: "도공유렵 (비정상적 궤도 움직임 가능)", tags: [] },
   { id: 21, name: "미사", faction: "sanctuary", grade: "특급", gender: "女", age: "24", technique: "모독성흔 (성흔과 기도를 저주로 뒤틀어 속박·처벌)", domain: "타성참계 (시선 내 성흔·사슬·가시로 속박)", tags: ["융통성", "요망", "15세기의 수녀", "타락의 원인을 주술로 봄"] },
-  { id: 22, name: "아카네", faction: "eclipse", grade: "특급", gender: "男", age: "24", technique: "식월술식 (일식·월식의 그림자로 참격을 만들어냄)", domain: "흑월천관 (빛과 그림자의 경계에서 참격 발생)", tags: ["열정", "냉철", "16세기의 사람", "배신당해 환멸"] },
+  { id: 22, name: "아카네", faction: "eclipse", grade: "특급", gender: "女", age: "24", technique: "식월술식 (일식·월식의 그림자로 참격을 만들어냄)", domain: "흑월천관 (빛과 그림자의 경계에서 참격 발생)", tags: ["열정", "냉철", "16세기의 사람", "배신당해 환멸"] },
   { id: 23, name: "프리아", faction: "gods", grade: "1급", gender: "女", age: "200", technique: "창혈술식 (푸른 혈류를 사출·응고·관통)", domain: "창혈침계 (혈류가 자동추적·관통·속박)", tags: ["차분", "냉정", "집요", "인간에 대한 생각이 많음"] },
   { id: 24, name: "프리엘", faction: "gods", grade: "특급", gender: "女", age: "2000+", technique: "원류술식 (순수 주력을 파동·결정·생기로 실체화)", domain: "원해성궁 (모든 주력을 환원·흡수·재구성)", tags: ["활기", "자애", "초월", "주력의 시초"] },
   { id: 25, name: "리츠카", faction: "eclipse", grade: "특급", gender: "女", age: "25", technique: "단죄재판 (상대의 유죄 판결에 따라 제약·봉인·처형)", domain: "무죄 없는 법정 (유죄 판결 시 처형)", tags: ["진중", "신념", "전 검사", "사법부에 환멸"] },
