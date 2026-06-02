@@ -1,8 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Loader2 } from 'lucide-react';
 
 const WebtoonSection = () => {
+  // 첫 번째 이미지를 즉시 로드하고, 나머지는 백그라운드에서 확인합니다.
+  const [images, setImages] = useState<number[]>([0]);
+
+  useEffect(() => {
+    let isMounted = true;
+    const checkImages = async () => {
+      let index = 1;
+      let hasMore = true;
+
+      while (hasMore && index < 20) {
+        const img = new Image();
+        img.referrerPolicy = "no-referrer";
+        
+        try {
+          await new Promise((resolve, reject) => {
+            img.onload = resolve;
+            img.onerror = reject;
+            img.src = `https://igx.kr/p/L2/32/${index}`;
+          });
+          if (!isMounted) return;
+          
+          setImages(prev => {
+            if (!prev.includes(index)) {
+              return [...prev, index];
+            }
+            return prev;
+          });
+          index++;
+        } catch {
+          hasMore = false;
+        }
+      }
+    };
+
+    checkImages();
+    return () => { isMounted = false; };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -18,13 +56,14 @@ const WebtoonSection = () => {
         </h2>
       </div>
 
-      <div className="w-full flex flex-col items-center">
-        {[0, 1, 2, 3, 4].map((index) => (
+      <div className="w-full flex flex-col items-center min-h-[500px]">
+        {images.map((index) => (
           <img 
             key={index} 
             src={`https://igx.kr/p/L2/32/${index}`} 
             alt={`웹툰 ${index + 1}화 (부분)`}
-            className="w-full max-w-full block" 
+            className="w-full max-w-full block bg-shaman-surface/20 min-h-[300px]" 
+            loading={index === 0 ? "eager" : "lazy"}
             referrerPolicy="no-referrer"
           />
         ))}

@@ -72,14 +72,14 @@ export const CharacterModal = ({ selectedChar, onClose }: { selectedChar: any, o
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-40 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full transition-colors focus:outline-none"
+          className="absolute top-3 right-3 md:top-4 md:right-4 z-40 p-1.5 md:p-2 bg-black/50 hover:bg-black/80 text-white rounded-full transition-colors focus:outline-none"
           aria-label="Close details"
         >
-          <X className="w-5 h-5" />
+          <X className="w-5 h-5 md:w-6 md:h-6" />
         </button>
 
         {/* Image Pane */}
-        <div className="w-full md:w-[45%] h-80 md:h-auto bg-black relative shrink-0 flex flex-col">
+        <div className="w-full md:w-[45%] h-[40vh] sm:h-80 md:h-auto bg-black relative shrink-0 flex flex-col">
           <div className="flex-1 relative overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.img 
@@ -99,13 +99,13 @@ export const CharacterModal = ({ selectedChar, onClose }: { selectedChar: any, o
           </div>
 
           {/* Emotion Selector */}
-          <div className="w-full bg-black/60 p-2.5 flex overflow-x-auto gap-2 z-30 relative shrink-0 h-[88px] border-t border-shaman-surface/50">
+          <div className="w-full bg-black/60 p-2 md:p-2.5 flex overflow-x-auto gap-2 z-30 relative shrink-0 h-[76px] md:h-[88px] border-t border-shaman-surface/50">
             {emotionMap.map(emo => (
               <button 
                 key={emo.id}
                 onClick={() => setCurrentImgId(emo.id)}
                 title={emo.name}
-                className={`flex-none w-14 h-full rounded border overflow-hidden relative group transition-all duration-200 ${currentImgId === emo.id ? 'border-shaman-primary-glow shadow-[0_0_8px_rgba(255,59,59,0.5)] scale-[1.02]' : 'border-transparent opacity-50 hover:opacity-100 hover:border-shaman-surface'}`}
+                className={`flex-none w-12 md:w-14 h-full rounded border overflow-hidden relative group transition-all duration-200 ${currentImgId === emo.id ? 'border-shaman-primary-glow shadow-[0_0_8px_rgba(255,59,59,0.5)] scale-[1.02]' : 'border-transparent opacity-50 hover:opacity-100 hover:border-shaman-surface'}`}
               >
                 <img src={`https://igx.kr/r/L2/${selectedChar.id}/${emo.id}`} alt={emo.name} className="w-full h-full object-cover pointer-events-none" referrerPolicy="no-referrer" />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-black/20 pt-2 pb-0.5 px-0.5">
@@ -117,12 +117,12 @@ export const CharacterModal = ({ selectedChar, onClose }: { selectedChar: any, o
         </div>
 
         {/* Info Pane */}
-        <div className="flex-1 p-6 md:p-10 overflow-y-auto bg-gradient-to-br from-shaman-bg to-shaman-surface/20">
-          <div className="mb-6 pb-6 border-b border-shaman-surface/50">
-            <div className="flex flex-wrap items-center gap-3 mb-2">
-              <h3 className="text-3xl sm:text-4xl font-serif font-bold text-shaman-text-light">{selectedChar.name}</h3>
+        <div className="flex-1 p-5 md:p-10 overflow-y-auto bg-gradient-to-br from-shaman-bg to-shaman-surface/20">
+          <div className="mb-5 pb-5 md:mb-6 md:pb-6 border-b border-shaman-surface/50">
+            <div className="flex flex-wrap items-center gap-2 md:gap-3 mb-2">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-shaman-text-light">{selectedChar.name}</h3>
               {selectedChar.grade && (
-                <span className="text-sm font-sans font-bold bg-shaman-primary-glow/10 border border-shaman-primary-glow/40 text-shaman-primary-glow px-2.5 py-1 rounded">
+                <span className="text-xs md:text-sm font-sans font-bold bg-shaman-primary-glow/10 border border-shaman-primary-glow/40 text-shaman-primary-glow px-2 py-0.5 md:px-2.5 md:py-1 rounded">
                   {selectedChar.grade}
                 </span>
               )}

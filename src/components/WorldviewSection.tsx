@@ -6,7 +6,7 @@ let hasSeenWorldviewSlides = false;
 
 const slides = [
   {
-    title: "서기 4443년 대한민국",
+    title: "서기 2026년 대한민국",
     subtitle: "주술의 시대, 혼란의 서막",
     description: "전국 곳곳에서 원인을 알 수 없는 묻지마 살인과 실종 사건이 연달아 발생한다. 일반 비술사들은 이를 기이한 재해나 괴현상으로만 인지하지만, 그 실체는 인간의 부정적인 감정에서 태어나 인간을 포식하는 흉악한 괴물, '주령'의 짓이다. 은닉되어 왔던 주술과 저주의 존재가 세상에 점차 드러나고 있다.",
     icon: <ShieldAlert className="w-12 h-12 md:w-20 md:h-20" />
@@ -192,7 +192,7 @@ const WorldviewSection = () => {
                 세계관
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-transparent via-shaman-primary to-transparent mx-auto"></div>
-              <p className="mt-6 text-xl text-shaman-text-muted font-sans font-light tracking-widest uppercase">Year 4443 / South Korea</p>
+              <p className="mt-6 text-xl text-shaman-text-muted font-sans font-light tracking-widest uppercase">Year 2026 / South Korea</p>
               
               <button
                 onClick={() => {
@@ -216,7 +216,7 @@ const WorldviewSection = () => {
                     <ShieldAlert className="w-6 h-6 mr-3" /> 시대 배경
                   </h3>
                   <p className="text-shaman-text-muted font-sans font-light leading-relaxed">
-                    서기 4443년 대한민국. 전 국가 기밀인 주술사에 대한 정체가 세상에 드러나며 몹시 혼란스러운 사회적 상태에 놓여 있다. 전국 곳곳에서 묻지마 살인과 실종이 연달아 발생하고 있다. 일반인들은 이를 주령의 식신(잔재)만을 보고 기이한 괴현상으로만 인지하지만, 실체는 인간을 잡아먹는 '주령'의 짓이다.
+                    서기 2026년 대한민국. 전 국가 기밀인 주술사에 대한 정체가 세상에 드러나며 몹시 혼란스러운 사회적 상태에 놓여 있다. 전국 곳곳에서 묻지마 살인과 실종이 연달아 발생하고 있다. 일반인들은 이를 주령의 식신(잔재)만을 보고 기이한 괴현상으로만 인지하지만, 실체는 인간을 잡아먹는 '주령'의 짓이다.
                   </p>
                 </section>
 

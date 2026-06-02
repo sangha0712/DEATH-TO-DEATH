@@ -40,15 +40,12 @@ export default function App() {
   React.useEffect(() => {
     const urlsToPreload: string[] = [];
     
-    // 1. 최우선 순위: 기본 화면에 필요한 이미지 (웹툰, 캐릭터 썸네일)
-    for (let i = 0; i <= 4; i++) {
-        urlsToPreload.push(`https://igx.kr/p/L2/32/${i}`);
-    }
+    // 기본 캐릭터 썸네일
     for (let id = 0; id <= 29; id++) {
         urlsToPreload.push(`https://igx.kr/r/L2/${id}/0`);
     }
 
-    // 2. 후순위: 모든 감정 표현 (사이트 접속 직후 백그라운드에서 끊임없이 로딩)
+    // 캐릭터 감정 표현
     for (let id = 0; id <= 29; id++) {
         for (let emo = 1; emo <= 15; emo++) {
             urlsToPreload.push(`https://igx.kr/r/L2/${id}/${emo}`);
@@ -56,28 +53,37 @@ export default function App() {
     }
 
     let index = 0;
-    
-    // onload 이벤트에 의존하면 하나라도 실패/지연 시 로딩이 완전히 멈추는 버그가 있습니다.
-    // setInterval을 활용해 브라우저 큐에 주기적으로 밀어넣어 중단 없이 100% 로딩되게 설정합니다.
-    const interval = setInterval(() => {
-      if (index >= urlsToPreload.length) {
-        clearInterval(interval);
-        return;
-      }
-      
-      // 100ms마다 5장씩 브라우저 네트워크 대기열에 추가 (빠르면서도 서버에 무리가 가지 않는 속도)
-      // 총 480장 로딩에 약 10초 정도 소요되며 끊김 없이 캐싱됩니다.
-      for (let k = 0; k < 5; k++) {
-        if (index < urlsToPreload.length) {
-          const img = new Image();
-          img.referrerPolicy = "no-referrer";
-          img.src = urlsToPreload[index];
-          index++;
-        }
-      }
-    }, 100);
+    // GC에 의해 Image 객체가 소멸되어 로딩이 취소되는 것을 방지하기 위해 배열에 참조를 유지합니다.
+    const imageCache: HTMLImageElement[] = [];
 
-    return () => clearInterval(interval);
+    const loadNext = () => {
+      if (index >= urlsToPreload.length) return;
+      
+      const currentIndex = index++;
+      const img = new Image();
+      img.referrerPolicy = "no-referrer";
+      
+      // 로딩 성공/실패 시 이어서 다음 이미지를 로딩하여 로딩이 멈추는 것을 방지
+      img.onload = () => {
+        loadNext();
+      };
+      img.onerror = () => {
+        loadNext();
+      };
+      
+      img.src = urlsToPreload[currentIndex];
+      imageCache.push(img);
+    };
+
+    // 타임아웃을 주어 초기 페이지 렌더링을 방해하지 않고 백그라운드에서 동기화되게 함
+    const timer = setTimeout(() => {
+      // 4개의 병렬 워커로 로딩하여 하나가 실패/지연되더라도 다른 병렬 흐름으로 멈춤 없이 100% 로딩되도록 변경
+      for (let i = 0; i < 4; i++) {
+        loadNext();
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const handleJoin = () => {
@@ -179,15 +185,15 @@ export default function App() {
       {view === 'section' && (
         <div className="flex flex-col flex-1">
           <nav className="fixed top-0 left-0 right-0 z-50 border-b border-shaman-surface bg-shaman-bg/80 backdrop-blur-md">
-            <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between">
+            <div className="max-w-5xl mx-auto px-4 py-3 md:px-6 md:py-4 flex flex-col md:flex-row items-center justify-between">
               <button 
                 onClick={() => setView('hub')}
-                className="text-2xl font-serif font-bold tracking-widest text-shaman-primary-glow mb-4 md:mb-0 hover:text-shaman-text-light transition-colors"
+                className="text-xl md:text-2xl font-serif font-bold tracking-widest text-shaman-primary-glow mb-3 md:mb-0 hover:text-shaman-text-light transition-colors"
                 title="홈으로 돌아가기"
               >
                 환사유계
               </button>
-              <div className="flex space-x-4 md:space-x-8">
+              <div className="flex w-full md:w-auto justify-around md:justify-end space-x-2 sm:space-x-4 md:space-x-8">
                 <NavItem 
                   active={activeTab === 'webtoon'} 
                   onClick={() => setActiveTab('webtoon')}
@@ -216,7 +222,7 @@ export default function App() {
             </div>
           </nav>
 
-          <main className="relative z-10 flex-1 pt-[120px] md:pt-[80px]">
+          <main className="relative z-10 flex-1 pt-[100px] md:pt-[80px]">
             <AnimatePresence mode="wait">
               {activeTab === 'webtoon' && <WebtoonSection key="webtoon" />}
               {activeTab === 'characters' && <CharactersSection key="characters" />}
@@ -236,7 +242,7 @@ export default function App() {
 const NavItem = ({ active, children, onClick }: { active: boolean; children: React.ReactNode; onClick: () => void }) => (
   <button
     onClick={onClick}
-    className={`pb-2 px-1 text-sm md:text-base tracking-wide transition-all duration-300 relative ${
+    className={`pb-2 px-1 text-xs sm:text-sm md:text-base tracking-wide transition-all duration-300 relative ${
       active ? 'text-shaman-text-light' : 'text-shaman-text-muted hover:text-shaman-text-light'
     }`}
   >
