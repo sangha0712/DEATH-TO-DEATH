@@ -31,8 +31,8 @@ const slides = [
   },
   {
     title: "주술전의 정점",
-    subtitle: "영역전개 (領域展開)와 흑섬 (黑閃)",
-    description: "주술전의 꽃이자 궁극기인 '영역전개'는 심상 공간을 현실에 구현해 결계로 가두는 기술로, 이 안에서 펼쳐지는 술식은 100% 명중하는 절대적인 어드밴티지를 갖는다. 또한 타격 오차 0.001초 이내에 주력이 충돌할 때 공간이 왜곡되며 검은 번개를 동반하는 '흑섬'은 평소의 2.5승에 달하는 파괴력을 낸다.",
+    subtitle: "영역전개 (領域展開)와 공진 (共振)",
+    description: "주술전의 꽃이자 궁극기인 '영역전개'는 심상 공간을 현실에 구현해 결계로 가두는 기술로, 이 안에서 펼쳐지는 술식은 100% 명중하는 절대적인 어드밴티지를 갖는다. 또한 전투 중 각각의 주력이 동일한 출력으로 충돌 시 공간 왜곡이 발생하는 '공진'을 경험하면, 각 술사는 잠시 주력의 핵심을 깨닫는 극한 몰입 상태에 돌입한다.",
     icon: <Zap className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
@@ -329,9 +329,9 @@ const WorldviewSection = () => {
                       </p>
                     </div>
                     <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
-                      <strong className="text-shaman-text-light block mb-1">흑섬 (黑閃)</strong>
+                      <strong className="text-shaman-text-light block mb-1">공진 (共振)</strong>
                       <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        타격과의 오차가 0.001초 이내에 주력이 충돌했을 때 발생하는 공간의 왜곡. 이때 발생하는 타격의 위력은 평소의 2.5승으로 증가하며 검은 빛의 에너지가 번쩍인다. 흑섬을 경험한 술사는 잠시 주력의 핵심을 깨닫게 되는 극한의 몰입(Zone) 상태에 돌입한다.
+                        전투 중 각각의 주력이 동일한 출력으로 충돌 시 공간의 왜곡이 발생한다. 공진을 경험한 각 술사는 잠시 주력의 핵심을 깨닫게 되는 극한의 몰입(Zone) 상태에 돌입한다.
                       </p>
                     </div>
                   </div>
