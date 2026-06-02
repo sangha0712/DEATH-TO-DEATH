@@ -8,7 +8,7 @@ const slides = [
   {
     title: "서기 2026년 대한민국",
     subtitle: "주술의 시대, 혼란의 서막",
-    description: "전국 곳곳에서 원인을 알 수 없는 묻지마 살인과 실종 사건이 연달아 발생한다. 일반 비술사들은 이를 기이한 재해나 괴현상으로만 인지하지만, 그 실체는 인간의 부정적인 감정에서 태어나 인간을 포식하는 흉악한 괴물, '주령'의 짓이다. 은닉되어 왔던 주술과 저주의 존재가 세상에 점차 드러나고 있다.",
+    description: "국가 기밀이었던 주술사에 대한 정체가 세상에 드러나며 혼란스러운 시대. 강한 주령의 과잉 발생으로 세계의 균형을 맞추기 위해 특급 주술사들이 많이 태어났다. 전국 곳곳에서 살인과 실종이 빈번히 발생하며, 일반인은 식신(잔재)만을 볼 수 있어 기이한 괴현상으로만 인지한다.",
     icon: <ShieldAlert className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
@@ -32,13 +32,13 @@ const slides = [
   {
     title: "주술전의 정점",
     subtitle: "영역전개 (領域展開)와 흑섬 (黑閃)",
-    description: "주술전의 꽃이자 궁극기인 '영역전개'는 심상 공간을 현실에 구현해 결계로 가두는 기술로, 이 안에서 펼쳐지는 술식은 100% 명중하는 절대적인 어드밴티지를 갖는다. 또한 타격 오차 0.000001초 이내에 주력이 충돌할 때 공간이 왜곡되며 검은 번개를 동반하는 '흑섬'은 평소의 2.5승에 달하는 파괴력을 낸다.",
+    description: "주술전의 꽃이자 궁극기인 '영역전개'는 심상 공간을 현실에 구현해 결계로 가두는 기술로, 이 안에서 펼쳐지는 술식은 100% 명중하는 절대적인 어드밴티지를 갖는다. 또한 타격 오차 0.001초 이내에 주력이 충돌할 때 공간이 왜곡되며 검은 번개를 동반하는 '흑섬'은 평소의 2.5승에 달하는 파괴력을 낸다.",
     icon: <Zap className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
     title: "환사유계 (幻死幽界)",
-    subtitle: "거짓된 성배, 멸망의 배틀로얄",
-    description: "한반도 정중앙에 거대한 결계를 치고 수많은 주술사와 주령들을 전송시켜 목숨을 건 사투를 강제한다. 이 잔혹한 배틀로얄에서 생존하면 절대적인 소원을 이뤄준다는 소문이 돌고 있으나, 그 실체는 주술 자체를 세상에서 지워버리려는 초월적 존재들의 기만이다.",
+    subtitle: "배틀로얄과 절대적 소원권",
+    description: "결계 안에서 수많은 주술사와 주령들이 전송되어 사투를 벌인다. 주술사들 사이에서는 배틀로얄 생존 시 주어지는 절대적인 당첨 소원권에 대한 소문이 돌고 있다. 소원권은 사실이나, 그 실체는 주술 자체를 회수하기 위해 벌인 판이다.",
     icon: <Map className="w-12 h-12 md:w-20 md:h-20" />
   }
 ];
@@ -216,7 +216,7 @@ const WorldviewSection = () => {
                     <ShieldAlert className="w-6 h-6 mr-3" /> 시대 배경
                   </h3>
                   <p className="text-shaman-text-muted font-sans font-light leading-relaxed">
-                    서기 2026년 대한민국. 전 국가 기밀인 주술사에 대한 정체가 세상에 드러나며 몹시 혼란스러운 사회적 상태에 놓여 있다. 전국 곳곳에서 묻지마 살인과 실종이 연달아 발생하고 있다. 일반인들은 이를 주령의 식신(잔재)만을 보고 기이한 괴현상으로만 인지하지만, 실체는 인간을 잡아먹는 '주령'의 짓이다.
+                    서기 2026년 대한민국. 전 국가 기밀인 주술사에 대한 정체가 세상에 드러나며 몹시 혼란스러운 사회적 상태에 놓여 있다. 강한 주령이 너무 많이 생겨나 세계의 균형을 유지하기 위해 특급 주술사가 많이 태어난 시대이다. 전국 곳곳에서 묻지마 살인과 실종이 연달아 발생하고 있다. 일반인들은 주령의 식신(잔재)만을 보고 기이한 괴현상으로만 인지하지만, 실체는 인간을 잡아먹는 '주령'의 짓이다.
                   </p>
                 </section>
 
@@ -234,12 +234,12 @@ const WorldviewSection = () => {
                     <Shield className="w-6 h-6 mr-3" /> 주술고전
                   </h3>
                   <p className="text-shaman-text-muted font-sans font-light leading-relaxed mb-4">
-                    전 세계의 주요 국가에 하나씩 존재하는 기관. 국가 차원에서 비밀리에 운영하며, 고전 내 주술사들을 교육하고 이능력을 통제하는 역할을 맡고 있다.
+                    국가 차원에서 비밀리에 운영하는 기관으로, 고전 내 주술사들을 교육하고 이능력을 통제하는 역할을 맡고 있다.
                   </p>
                   <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-primary">
                     <strong className="text-shaman-text-light block mb-1">숨겨진 진실</strong>
                     <p className="text-sm font-sans font-light text-shaman-text-muted">
-                      자유롭게 주술사를 양성하기 위해, 고전에 입학한 학생들의 부모님은 모두 국가 기관에 의해 극비리에 암살당했다.
+                      자유롭게 주술사를 양성하기 위해, 고전에 입학한 학생들의 부모님은 모두 정부 기관에 의해 극비리에 암살당했다.
                     </p>
                   </div>
                 </section>
@@ -249,7 +249,7 @@ const WorldviewSection = () => {
                     <Map className="w-6 h-6 mr-3" /> 환사유계 (幻死幽界)
                   </h3>
                   <p className="text-shaman-text-muted font-sans font-light leading-relaxed">
-                    한반도 정중앙에 대형 결계를 치고 그 속에서 주술사와 주령들은 목숨을 건 사투를 벌인다. 이 배틀로얄에서 승리 시 절대적인 소원을 획득한다는 소문이 주술사들 사이에서 파다하게 돌고 있으나, 그 소원권은 거짓이며 실체는 세상에서 주술을 완전히 지워버리려는 절대신들의 어두운 계획이다.
+                    한반도 정중앙에 대형 결계를 치고 그 속에서 주술사와 주령들은 목숨을 건 사투를 벌인다. 이 배틀로얄에서 승리 시 절대적인 소원권을 획득한다는 소문이 주술사들 사이에서 파다하게 돌고 있다. 소원권 자체는 사실이지만, 그 실체는 세상에서 주술을 회수하기 위해 벌인 거대한 판이다.
                   </p>
                 </section>
               </div>
@@ -266,7 +266,7 @@ const WorldviewSection = () => {
                     </div>
                     <div>
                       <strong className="text-shaman-text-light block mb-1">주술사 (呪術師)와 주구 (呪具)</strong>
-                      <p>주력을 다루어 주령을 제령하는 통제자들. 본래부터 저주가 깃들어있는 무기인 '주구'를 사용하여 육탄전을 벌이기도 한다. 남자 술사는 주력을 각성할 때 그 저주를 감당하지 못하고 사망하는 경우가 잦아 극히 그 수가 적다.</p>
+                      <p>술식을 사용하는 자들로, 신을 몹시 증오한다. 간혹 저주가 깃들어있는 무기인 '주구'를 사용하기도 한다. 남자 술사는 주력을 각성할 때 그 저주를 감당하지 못하고 죽는 경우가 많아 여술사에 비해 수가 매우 적다.</p>
                     </div>
                     <div>
                       <strong className="text-shaman-text-light block mb-1">장막 (帳)</strong>
@@ -288,7 +288,7 @@ const WorldviewSection = () => {
                   <div className="mb-4">
                     <strong className="text-shaman-text-light block mb-1">술식 (術式)</strong>
                     <p className="text-shaman-text-muted font-sans font-light leading-relaxed">
-                      출생 시 뇌에 각인되는 고유의 능력으로, 체내의 '주력'을 자원으로 사용한다. 술식이 완전히 소멸되면 사용자는 사망한다. 타인 양도는 가능하나 2개 이상 소지 시 술식이 둘 다 소멸된다.
+                      출생 시 뇌에 각인되는 고유의 능력으로, 체내의 에너지인 '주력'을 자원으로 사용한다. 술식이 완전히 소멸되면 사용자는 사망하게 된다.
                     </p>
                   </div>
                   
@@ -296,19 +296,13 @@ const WorldviewSection = () => {
                     <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-accent">
                       <strong className="text-shaman-text-light block mb-1">속박 (束縛)</strong>
                       <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        스스로에게 주술적인 패널티나 제약을 부여함으로써 발생하는 메리트를 취하는 주술의 등가교환 법칙.
-                      </p>
-                    </div>
-                    <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-accent">
-                      <strong className="text-shaman-text-light block mb-1">천여주박 (天与呪縛)</strong>
-                      <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        태어날 때부터 육체에 강제적으로 부여된 선천적 속박. 주력을 전혀 다룰 수 없게 되는 대신 상식을 초월한 압도적인 신체 능력을 얻는 등 극단적인 교환이 성립된다.
+                        스스로에게 주술적인 패널티나 제약을 부여함으로써 발생하는 메리트를 취하는 법칙.
                       </p>
                     </div>
                     <div className="bg-shaman-surface/50 p-4 border-l-2 border-shaman-accent">
                       <strong className="text-shaman-text-light block mb-1">반전술식 (反轉術式)</strong>
                       <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        고도로 발달된 주력 조작으로 신체를 회복하는 기술. 단단한 긍정 에너지를 주령에게 직접 주입하면 확실하게 제령할 수 있다.
+                        고도로 발달된 주력 조작으로 끊어진 신체를 완벽히 회복하는 기술. 이 긍정 에너지를 주령에게 직접 주입하면 확실하게 제령할 수 있다. 특급 주술사는 이 기술을 반드시 사용할 수 있다.
                       </p>
                     </div>
                   </div>
@@ -320,21 +314,24 @@ const WorldviewSection = () => {
                   </h3>
                   <div className="space-y-4">
                     <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
-                      <strong className="text-shaman-text-light block mb-1">영역전개 (領域展開)</strong>
+                      <strong className="text-shaman-text-light block mb-1">영역전개 (領域展開) & 편린영역 (片鱗領域)</strong>
+                      <p className="text-sm font-sans font-light text-shaman-text-muted mb-2">
+                        <strong className="text-shaman-text-light">영역전개:</strong> 결계를 펼쳐 자신의 술식이 필중하도록 하는 주술전의 정점이자 필살기. 1급 이상 주술사는 반드시 사용할 수 있다. 사용 직후에는 술식이 타버려 몇 분간 술식을 사용할 수 없게 되는 리스크가 따른다. 대응법은 간이영역이나 동일한 영역전개를 통한 맞불.
+                      </p>
                       <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        결계를 펼쳐 자신의 술식이 필중하도록 하는 주술전의 정점이자 필살기. 사용 직후에는 술식이 타버려 몇 분간 술식을 사용할 수 없게 되는 리스크가 따른다.
+                        <strong className="text-shaman-text-light">편린영역:</strong> 주변에 작은 결계를 펼쳐 적의 영역 필중 효과를 일시적으로 중화시키는 기술.
                       </p>
                     </div>
                     <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
-                      <strong className="text-shaman-text-light block mb-1">극번 (極ノ番)</strong>
+                      <strong className="text-shaman-text-light block mb-1">오의 (奧義)</strong>
                       <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        각 술식의 극치에 달한 기술. 영역전개에 버금가는 위력을 지닌 준 필살기이다.
+                        술식의 극치에 달한 기술. 영역전개에 버금가는 위력을 지닌 준 필살기이다.
                       </p>
                     </div>
                     <div className="bg-black/20 p-4 border-l-2 border-shaman-primary-glow">
                       <strong className="text-shaman-text-light block mb-1">흑섬 (黑閃)</strong>
                       <p className="text-sm font-sans font-light text-shaman-text-muted">
-                        타격과의 오차가 0.000001초 이내에 주력이 충돌했을 때 발생하는 공간의 왜곡. 이때 발생하는 타격의 위력은 평소의 2.5승으로 증가하며 검은 빛의 에너지가 번쩍인다. 흑섬을 경험한 술사는 일시적으로 주력의 핵심을 깨닫게 되는 극한의 몰입(Zone) 상태에 돌입한다.
+                        타격과의 오차가 0.001초 이내에 주력이 충돌했을 때 발생하는 공간의 왜곡. 이때 발생하는 타격의 위력은 평소의 2.5승으로 증가하며 검은 빛의 에너지가 번쩍인다. 흑섬을 경험한 술사는 잠시 주력의 핵심을 깨닫게 되는 극한의 몰입(Zone) 상태에 돌입한다.
                       </p>
                     </div>
                   </div>
