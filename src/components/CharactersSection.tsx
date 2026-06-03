@@ -34,7 +34,7 @@ export const rawCharacters = [
   { id: 17, name: "유이카", faction: "jujutsu", grade: "1급", gender: "女", age: "19", technique: "흡명화술식 (꽃·덩굴로 생명력·저주력 흡수)", domain: "탈명화원 (꽃과 덩굴이 적을 휘감아 생명력·저주력 강제흡수)", tags: ["차분", "순함", "주술 고교 교사"] },
   { id: 18, name: "시온", faction: "jujutsu", grade: "2급", gender: "女", age: "17", technique: "경반술식 (공격을 반사·왜곡·복제)", domain: "흑월천관 (빛과 그림자의 경계에서 참격 발생)", tags: ["쿨", "털털"] },
   { id: 19, name: "카논", faction: "jujutsu", grade: "1급", gender: "女", age: "17", technique: "주포술식 (압축 주력포 발사)", domain: "포화굉역 (압축 주력포가 전방위 연속포격)", tags: ["장난", "여유", "화력광"] },
-  { id: 20, name: "코하루", faction: "hwansa", grade: "3급", gender: "男", age: "16", technique: "도약술식 (순간 도약과 공중 기동으로 궤도란)", domain: "도공유렵 (비정상적 궤도 움직임 가능)", tags: [] },
+  { id: 20, name: "코하루", faction: "hwansa", grade: "3급", gender: "女", age: "16", technique: "도약술식 (순간 도약과 공중 기동으로 궤도란)", domain: "도공유렵 (비정상적 궤도 움직임 가능)", tags: [] },
   { id: 21, name: "미사", faction: "sanctuary", grade: "특급", gender: "女", age: "24", technique: "모독성흔 (성흔과 기도를 저주로 뒤틀어 속박·처벌)", domain: "타성참계 (시선 내 성흔·사슬·가시로 속박)", tags: ["융통성", "요망", "15세기의 수녀", "타락의 원인을 주술로 봄"] },
   { id: 22, name: "아카네", faction: "eclipse", grade: "특급", gender: "女", age: "24", technique: "식월술식 (일식·월식의 그림자로 참격을 만들어냄)", domain: "흑월천관 (빛과 그림자의 경계에서 참격 발생)", tags: ["열정", "냉철", "16세기의 사람", "배신당해 환멸"] },
   { id: 23, name: "프리아", faction: "gods", grade: "1급", gender: "女", age: "200", technique: "창혈술식 (푸른 혈류를 사출·응고·관통)", domain: "창혈침계 (혈류가 자동추적·관통·속박)", tags: ["차분", "냉정", "집요", "인간에 대한 생각이 많음"] },
