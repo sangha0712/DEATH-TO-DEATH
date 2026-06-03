@@ -175,6 +175,15 @@ export const CharacterModal = ({ selectedChar, onClose }: { selectedChar: any, o
               </div>
             )}
           </div>
+          
+          <div className="mt-8 flex justify-end border-t border-shaman-surface/50 pt-4">
+            <button
+              onClick={onClose}
+              className="px-6 py-2 bg-shaman-surface/50 hover:bg-shaman-primary-glow/20 text-shaman-text-light border border-shaman-surface hover:border-shaman-primary-glow/50 rounded transition-colors font-sans"
+            >
+              닫기
+            </button>
+          </div>
         </div>
       </motion.div>
     </div>
