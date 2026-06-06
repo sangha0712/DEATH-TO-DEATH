@@ -15,7 +15,7 @@ const factionsConfig = [
 
 export const rawCharacters = [
   { id: 0, name: "레이", faction: "gods", grade: "3급", gender: "女", age: "124", technique: "도혼술식 (잔혼을 불러 적의 혼·움직임을 끌어당김)", domain: "명천송혼 (저승의 강이 영역 내 혼을 강제 인도·속박)", tags: ["차분", "몽환", "상냥한듯섬뜩", "영혼인도자", "물빛저승계"] },
-  { id: 1, name: "레이사", faction: "hwansa", grade: "1급", gender: "女", age: "16", technique: "희령식신술 (마스코트 원령식신 소환·지휘)", domain: "희령유원 (식신이 무한증식해 포위·돌격·자폭)", tags: ["활발", "장난", "광기", "소라토와 남매"] },
+  { id: 1, name: "레이사", faction: "hwansa", grade: "1급", gender: "女", age: "16", technique: "희령식신술 (마스코트 원령식신 소환·지휘)", domain: "희령유원 (식신이 무한증식해 포위·돌격·자폭)", tags: ["활발", "장난", "광기", "헤이즈와 남매"] },
   { id: 2, name: "렌", faction: "hwansa", grade: "2급", gender: "男", age: "17", technique: "주정술식 (주력을 푸른 결정·파편·칼날로 실체화)", domain: "창정쇄계 (주력이 결정 파편으로 실체화되어 전방위 절단·폭격)", tags: ["냉정", "무심", "정밀", "주술사 해부·분석에 흥미"] },
   { id: 3, name: "리아", faction: "grave", grade: "특급", gender: "女", age: "22", technique: "환감술식 (시선 내 좌표로 자유롭게 이동)", domain: "미등환가 (좌표를 붕괴시켜 자신만이 이동)", tags: ["나른", "능글", "기만적"] },
   { id: 4, name: "리안", faction: "grave", grade: "1급", gender: "男", age: "17", technique: "영잠술식 (그림자 속을 잠행해 사각에서 급습)", domain: "암영복궁 (모든 사각에서 그림자 급습 발생)", tags: ["냉정", "과묵", "은밀", "정부에게 밉보여 고전 퇴학"] },
